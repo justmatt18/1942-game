@@ -1,0 +1,85 @@
+body {
+  background-color: black;
+  margin: 0px;
+}
+#container {
+  width: 1000px;
+  height: 550px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#hero {
+  background: url("1942.gif");
+  background-position: -85px -180px;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+}
+
+.enemy1 {
+  background: url("1942.gif");
+  background-position: -30px -10px;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+}
+
+.enemy2 {
+  background: url("1942.gif");
+  background-position: -152px -10px;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: 250px;
+  left: 700px;
+}
+
+.enemy3 {
+  background: url("1942.gif");
+  background-position: -66px -12px;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: 250px;
+  left: 750px;
+}
+
+.bullet {
+  background: url("1942.gif");
+  background-position: -185px -400px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+}
+#score {
+  position: absolute;
+  border: 10px solid red;
+  top: 0px;
+  left: 1000px;
+  background-color: white;
+  padding: 10px;
+  font-size: 30px;
+  font-family: Arial;
+}
+
+.red-text {
+  font-size: 50px;
+  text-align: center;
+  top: 250px;
+  position: absolute;
+  left: 340px;
+  color: red;
+}
+
+.collision {
+  background: url("1942.gif");
+  background-position: -145px -32px;
+  width: 30px;
+  height: 28px;
+  position: absolute;
+}
+
+#explosion {
+  display: none;
+}
