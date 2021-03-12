@@ -15,8 +15,8 @@ document.getElementById(
 ).style.background = `url(${backgrounds[map]})`;
 
 var enemies = [
-  { plane: `enemy${getRandom(3) + 1}`, x: getRandom(60) + 10, y: 0 },
-  { plane: `enemy${getRandom(3) + 1}`, x: getRandom(100) + 10, y: -100 },
+  { plane: `enemy${getRandom(3) + 1}`, x: 60, y: 0 },
+  { plane: `enemy${getRandom(3) + 1}`, x: 140, y: -100 },
   { plane: `enemy${getRandom(3) + 1}`, x: 250, y: -40 },
   { plane: `enemy${getRandom(3) + 1}`, x: 400, y: -80 },
   { plane: `enemy${getRandom(3) + 1}`, x: 500, y: 0 },
@@ -86,8 +86,8 @@ function moveEnemies() {
     if (enemies[i].y < 535) {
       enemies[i].y += 1;
       if (hasCollide(enemies, i) && enemies[i].plane != "collision") {
-        score -= 500;
         playSound(sounds.collide);
+        score -= 500;
         enemies[i].plane = "collision";
         showEnemies();
       }
