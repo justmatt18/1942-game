@@ -92,7 +92,7 @@ function moveEnemies() {
         showEnemies();
       }
     } else {
-      enemies[i].y = -100;
+      enemies[i].y = -150;
       enemies[i].plane = `enemy${getRandom(3) + 1}`;
     }
   }
@@ -106,13 +106,14 @@ function moveBullets() {
       for (var j = enemies.length - 1; j >= 0; j--) {
         if (
           (bullets[i].x == enemies[j].x && bullets[i].y == enemies[j].y) ||
-          (bullets[i].x + 40 > enemies[j].x && bullets[i].x - 40 < enemies[j].x)
+          (bullets[i].x + 30 > enemies[j].x && bullets[i].x - 30 < enemies[j].x)
         ) {
           if (bullets[i].y == enemies[j].y && enemies[j].plane != "collision") {
             playSound(sounds.collide);
             score += 10;
             enemies[j].plane = "collision";
-            showScore();
+            bullets[i] = bullets[bullets.length - 1];
+            bullets.pop();
           }
         }
       }
