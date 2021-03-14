@@ -38,10 +38,9 @@ function showScore() {
   }
 }
 
-// explosion sound
 function playSound(path) {
-  document.getElementById("explosion").innerHTML =
-    "<embed src='" + path + "' hidden='true' autostart='true' loop='false' />";
+  var audio = new Audio(path);
+  audio.play();
 }
 
 // display hero position on screen
@@ -114,6 +113,7 @@ function moveBullets() {
             enemies[j].plane = "collision";
             bullets[i] = bullets[bullets.length - 1];
             bullets.pop();
+            break;
           }
         }
       }
@@ -130,17 +130,20 @@ function gameLoop() {
     showEnemies();
     moveEnemies();
     showScore();
+  } else {
+    clearInterval(startGame);
+    clearInterval(bulletsInterval);
   }
 }
 
-setInterval(() => {
+var bulletsInterval = setInterval(() => {
   moveBullets();
   showBullets();
 }, 1);
 
-setInterval(() => {
+var startGame = setInterval(() => {
   gameLoop();
-}, 15);
+}, 1);
 
 // move hero ✈️ and fire bullet 💥
 document.onkeydown = function (e) {
